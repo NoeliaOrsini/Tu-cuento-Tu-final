@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tu cuento, tu final</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tu cuento, tu final</h1>
+
+  <div class="selector">
+      <div> 
+      <label for="titulo">Elegí el título de tu cuento:</label>
+      <input type="text" id="titulo" placeholder="Ej: Las aventuras de un dragón curioso">
+      </div>
+
+      <div>
+        <label>Elegí el inicio:</label>
+        <select id="inicio">
+          <option value="En un bosque encantado,">En un bosque encantado</option>
+          <option value="En una escuela misteriosa,">En una escuela misteriosa</option>
+          <option value="En una ciudad del futuro,">En una ciudad del futuro</option>
+        </select>
+
+        <label>Elegí el personaje:</label>
+        <select id="personaje" onchange="mostrarImagen()">
+          <option value="una niña valiente">una niña valiente</option>
+          <option value="un niño valiente">un niño valiente</option>
+          <option value="un robot curioso">un robot curioso</option>
+          <option value="un dragón dormilón">un dragón dormilón</option>
+        </select>
+
+        <label>Elegí el conflicto:</label>
+        <select id="conflicto">
+          <option value="perdió algo muy importante.">perdió algo muy importante.</option>
+          <option value="descubrió un gran secreto.">descubrió un gran secreto.</option>
+          <option value="se enfrentó a un gran desafío.">se enfrentó a un gran desafío.</option>
+        </select>
+      </div>
+
+    <div>
+      <label>Escribí tu parte del cuento:</label><br>
+      <textarea id="desarrollo" rows="5" cols="50" placeholder="Agregá aquí tu parte del cuento..."></textarea><br><br>
+    
+    </div>
+
+    <div>   
+    <label>Elegí el final:</label>
+    <select id="final">
+      <option value="Y finalmente, con ayuda de nuevos amigos, lo resolvieron."> Y finalmente, con ayuda de nuevos amigos, lo resolvieron.</option>
+      <option value="Después de la aventura, todo volvió a la normalidad.">Después de la aventura, todo volvió a la normalidad.</option>
+      <option value="Y es así, como comenzó una nueva historia.">Y es así, como comenzó una nueva historia.</option>
+    </select>
+    </div>
+    
+    <button onclick="generarCuento()">Crear mi cuento</button>
+    <button onclick="descargarPDF()">Descargar como PDF</button>
+    <button onclick="limpiarCuento()">Limpiar cuento</button>
+    <button onclick="leerCuento()">🔊 Escuchar cuento</button>
+
+  </div>
+
+  <div class="cuento">
+  <h2>Tu cuento:</h2>
+  <div id="resultadoTitulo"></div>
+  <div id="resultadoTexto"></div>
+  <img id="imagenPersonaje" src="" alt="" class="imagen" style="display: none;">
+  </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
